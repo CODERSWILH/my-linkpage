@@ -1,0 +1,4 @@
+/* custom.css */
+body { background: #f8fafc; color: #0b1220; }
+.btn-gradient { background: linear-gradient(90deg,#ff7a59,#7c3aed); color:#fff; border:none; }
+.badge.bg-gradient { background: linear-gradient(90deg,#7c3aed,#06b6d4); color:#fff; }

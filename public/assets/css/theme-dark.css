@@ -1,0 +1,214 @@
+/* public/assets/css/theme-dark.css */
+:root.theme-dark {
+  --bg: #0b1220;
+  --card-bg: #0f1724;
+  --muted: #9aa4b2;
+  --text: #e6eef8;
+  --accent: #7c5cff;
+  --accent-2: #06b6d4;
+  --soft-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  --surface: #0b1220;
+  --border: rgba(255,255,255,0.06);
+}
+
+/* عناصر عامة تتكيّف مع المتغيرات */
+body.theme-dark {
+  background: var(--bg);
+  color: var(--text);
+}
+body.theme-dark .card, body.theme-dark .stat-card {
+  background: var(--card-bg);
+  box-shadow: var(--soft-shadow);
+  border: 1px solid var(--border);
+}
+body.theme-dark .stat-icon { filter: none; }
+body.theme-dark .link-title { color: var(--text); }
+body.theme-dark .link-url { color: var(--muted); }
+body.theme-dark .btn-add { box-shadow: 0 8px 24px rgba(124,92,255,0.12); }
+body.theme-dark .btn-outline-secondary { border-color: rgba(255,255,255,0.06); color: var(--text); }
+body.theme-dark .modal-content { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); }
+body.theme-dark .toast { background: rgba(255,255,255,0.04); color: var(--text); border: 1px solid rgba(255,255,255,0.04); }
+body.theme-dark .form-control { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+body.theme-dark .form-control:focus { box-shadow: 0 6px 18px rgba(124,92,255,0.08); border-color: var(--accent); }
+body.theme-dark #links-list .list-group-item { background: var(--card-bg); border: 1px solid var(--border); }
+body.theme-dark #links-list .list-group-item:hover { box-shadow: 0 18px 40px rgba(2,6,23,0.06); }   
+body.theme-dark .drag-handle { color: var(--muted); }
+body.theme-dark .link-actions .btn { background: rgba(255,255,255,0.04); color: var(--text); border: 1px solid rgba(255,255,255,0.06); }
+body.theme-dark .link-actions .btn:hover { background: rgba(255,255,255,0.06); }
+body.theme-dark #stats-modal { box-shadow: var(--soft-shadow); border: 1px solid var(--border); }
+/* تحسينات للواجهة المظلمة */
+body.theme-dark .chartjs-render-monitor {
+  filter: brightness(0.9);
+}
+/* تحسينات على الأزرار في الوضع المظلم */
+body.theme-dark .action-group .btn {
+  min-height: var(--touch-target);
+  padding: 10px 12px;
+
+
+}  
+body.theme-dark .action-group .btn.btn-add {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(124,92,255,0.12);
+}
+body.theme-dark .action-group .btn.btn-add svg {
+  filter: brightness(1.1);
+}
+/* تحسينات على قائمة الروابط في الوضع المظلم */
+body.theme-dark #links-list .list-group-item {
+  transition: transform .12s, box-shadow .12s;
+  border-radius: 10px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+body.theme-dark #links-list .list-group-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.06);
+}
+body.theme-dark .link-meta {
+  min-width: 320px;
+  text-align: right;
+}
+body.theme-dark .link-title {
+  font-weight: 600;
+  color: var(--text);
+}
+body.theme-dark .link-url {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+/* تحسينات على أزرار الإجراءات في الوضع المظلم */
+body.theme-dark .link-actions .btn {
+  min-width: 72px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+body.theme-dark .link-actions .btn:hover {
+  background: rgba(255,255,255,0.06);
+}
+/* تحسينات على المودال في الوضع المظلم */
+body.theme-dark .modal-content {
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+body.theme-dark #stats-modal {
+  z-index: 2100;
+  border-radius: 12px;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid var(--border);
+}
+/* تحسينات استجابية للوضع المظلم */
+@media (max-width: 768px) {
+  body.theme-dark .link-meta {
+    min-width: 160px;
+  }
+  body.theme-dark .action-group {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+/* تحسينات للواجهة المظلمة على الأجهزة الصغيرة */
+@media (max-width: 768px) {
+    body.theme-dark .action-group {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    body.theme-dark .action-group .btn {
+        width: 100%;
+        text-align: center;
+    }
+    body.theme-dark .link-meta {
+        min-width: 0;
+    }
+    body.theme-dark .link-actions {
+        gap: 8px;
+    }
+    body.theme-dark #links-list .list-group-item {
+        padding: 12px;
+    }
+    body.theme-dark .link-title {
+        font-size: 1rem;
+    }
+    body.theme-dark .link-url {
+        font-size: 0.85rem;
+    }
+    }
+/* زيادة منطقة اللمس للأزرار وسحب المقبض في الوضع المظلم */
+body.theme-dark .link-actions .btn, body.theme-dark .drag-handle {
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+/* جعل مقبض السحب أكثر وضوحًا على الأجهزة المحمولة في الوضع المظلم */
+body.theme-dark .drag-handle {
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    padding: 8px;
+    touch-action: none; /* تحسين السحب باللمس */
+}
+/* ردود فعل بصرية أثناء السحب في الوضع المظلم */
+body.theme-dark .list-group-item.dragging {
+    background: rgba(124,92,255,0.1);
+    box-shadow: 0 20px 40px rgba(2,6,23,0.1);
+    transform: scale(1.02);
+}
+/* المودال بملء الشاشة على الأجهزة الصغيرة لتحسين سهولة الاستخدام في الوضع المظلم */
+@media (max-width: 576px) {
+  body.theme-dark .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+  }
+  body.theme-dark .modal-content {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  body.theme-dark .modal-body {
+    overflow: auto;
+    flex: 1 1 auto;
+  }
+  body.theme-dark .modal-footer {
+    flex-shrink: 0;
+  }
+}
+/* تحسينات على ارتفاع الرسم البياني المتجاوب للأجهزة المحمولة في الوضع المظلم */
+@media (max-width: 576px) {
+  body.theme-dark .chart-container {
+    height: 250px;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  body.theme-dark .chart-container {
+    height: 300px;
+  }
+}
+/* نهاية ملف theme-dark.css */
+/* نهاية ملف theme-dark.css */
+/* نهاية ملف theme-dark.css */
+@media (max-width: 576px) {
+  .chart-container { height: 250px; }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  .chart-container { height: 300px; }
+}
+/* نهاية ملف theme-dark.css */
